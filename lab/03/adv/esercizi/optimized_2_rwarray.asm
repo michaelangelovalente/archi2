@@ -50,7 +50,7 @@ EndA:
 
 
 #------------------------------------
-	la $t0, A ###  load A here_or_later???
+	la $t0, A ##
 
 	#s0=a, s1=b, s2=c
  
@@ -130,7 +130,7 @@ cEq0:
 	
 
 
-########---> la $t0, A #t0 = &A[0]###here_or_later??
+#	 la $t0, A #t0 = &A[0] ##
 
 	add $t0, $s0, $t0# &A[0] + (a*4) --> t0 = &A[a]
 	lw $t1, 0($t0)# t1 = A[a]
@@ -171,7 +171,7 @@ cEq0:
 # if c == 1 replace: A[b] = A[a]
 cEq1:
 	
-###---->la $t0, A# t0 = &A[0]######### here_or_later
+#	la $t0, A# t0 = &A[0] 
 	add $t1, $t0, $s0# t1 = &A[a]	
 	lw $t2, 0($t1)# t2 = A[a]
 
@@ -189,7 +189,8 @@ j END
 # if c == 1 replace: A[b] = A[a]
 cEqN1:
 	
-####---->la $t0, A# t0 = &A[0]	### here_or_later 
+##	la $t0, A# t0 = &A[0]##
+
 	add $t1, $t0, $s1# t1 = &A[b]
 	lw $t2, 0($t1)# t2 = A[b]
 
